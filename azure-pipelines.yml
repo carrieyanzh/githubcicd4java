@@ -12,18 +12,12 @@ steps:
 - task: JavaToolInstaller@0
   inputs:
     versionSpec: '8'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
-- task: Maven@3
+    installationDirectory: $(Agent.ToolsDirectory)/jdk
+    azureCommonVirtualFile: 
+
+- task: JavaToolInstaller@0
   inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'compile'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
-    mavenVersionOption: 'Default'
-    mavenOptions: '-Xmx3072m'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+    versionSpec: '8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'LocalDirectory'
+    cleanDestinationDirectory: true
