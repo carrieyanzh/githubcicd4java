@@ -12,5 +12,10 @@ steps:
 - task: JavaToolInstaller@0
   inputs:
     versionSpec: '8'
+    jdkArchitectureOption: 'x64'
     installationDirectory: $(Agent.ToolsDirectory)/jdk
     azureCommonVirtualFile: 
+
+
+- script: java -version
+  displayName: 'Check Java Version'
