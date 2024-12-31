@@ -14,10 +14,3 @@ steps:
     versionSpec: '8'
     installationDirectory: $(Agent.ToolsDirectory)/jdk
     azureCommonVirtualFile: 
-
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '8'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'LocalDirectory'
-    cleanDestinationDirectory: true
